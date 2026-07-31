@@ -7,7 +7,7 @@ An intelligent educational animation generator that creates step-by-step mathema
 - **15+ Animation Modes**: Function plots, matrix operations, vector addition, calculus visualizations, sorting algorithms, and more
 - **AI-Powered Generation**: Uses Gemini for prompt enhancement and Qwen for Manim code generation
 - **Hardcoded Matrix Multiplication**: Instant 4x4 matrix multiplication with step-by-step dot product visualization
-- **Safe Code Generation**: 19 safety rules ensure generated Manim code always runs
+- **Guarded Code Generation**: Validation rules and sanitizers reduce common Manim generation failures
 - **Interactive Web UI**: React frontend with Manual and Prompt modes
 - **Dual Pipeline**: Structured modes for math (stable) + manim_code_gen for concepts (flexible)
 
@@ -223,9 +223,30 @@ math-animation-generator/
 │   └── package.json
 ├── outputs/
 │   └── videos/                   # Generated animations
-├── dataset.json                  # 65 training examples
+├── sample_configs/              # Reproducible example inputs
 └── README.md
 ```
+
+## Validation
+
+The repository currently supports syntax validation for the Python pipeline and
+a production build for the frontend:
+
+```bash
+python3 -m compileall -q app.py animation_config.py animation_modes scenes
+cd frontend && npm run build
+```
+
+## Limitations
+
+- Generated Manim code is model output and can still fail validation or
+  rendering; the rules and sanitizers reduce risk but do not guarantee success.
+- Prompt enhancement requires a Gemini credential, while flexible code
+  generation requires a compatible local Ollama model.
+- Manim rendering depends on local system packages and can vary across operating
+  systems and versions.
+- The structured modes cover a bounded set of visualizations; unsupported
+  prompts may require manual adjustment.
 
 ## 🛡️ Safety Features
 
