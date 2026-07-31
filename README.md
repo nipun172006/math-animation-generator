@@ -25,8 +25,8 @@ An intelligent educational animation generator that creates step-by-step mathema
 
 #### 1. Clone the Repository
 ```bash
-git clone https://github.com/nipun172006/AnimationGenerator.git
-cd AnimationGenerator
+git clone https://github.com/nipun172006/math-animation-generator.git
+cd math-animation-generator
 ```
 
 #### 2. Backend Setup
@@ -206,7 +206,7 @@ Branch Decision
 ## 📁 Project Structure
 
 ```
-AnimationGenerator/
+math-animation-generator/
 ├── app.py                          # FastAPI backend
 ├── animation_config.py             # Pydantic schemas
 ├── animation_modes/
@@ -301,7 +301,7 @@ MIT License - See LICENSE file for details
 
 - **Author**: Nipun Thumu
 - **GitHub**: [@nipun172006](https://github.com/nipun172006)
-- **Repository**: [AnimationGenerator](https://github.com/nipun172006/AnimationGenerator)
+- **Repository**: [math-animation-generator](https://github.com/nipun172006/math-animation-generator)
 
 ---
 
